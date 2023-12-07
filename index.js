@@ -69,6 +69,6 @@ function game(){
     else{
         console.log("Computer wins");
     }
-}
+} 
 
 game();
