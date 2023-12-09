@@ -36,39 +36,84 @@ function playRound(player, computer){
     }
 }
 
-function getPlayerChoice(){
-    while(true){
-        let playerSelection = prompt("Choose: Rock, paper or scissors: ");
-        playerSelection = playerSelection.toLowerCase();
-        if(playerSelection === "scissors" || playerSelection === "rock" || playerSelection === "paper"){
-            return playerSelection;
-        }
-    }
-}
 
 let playerScore = 0;
 let computerScore = 0;
+let playerSelection = "";
 
-function game(){
-    for (let i = 0; i<5; i++)
-    {
-        playerSelection = getPlayerChoice();
-        console.log("Player: " + playerSelection);
-        computerSelection = getComputerChoice();
-        console.log("Computer: " + computerSelection)
-        playRound(playerSelection, computerSelection);
-    }
-    console.log("Player score: " + playerScore);
-    console.log("Computer score: " + computerScore);
-    if(playerScore===computerScore){
-        console.log("Tie");
-    }
-    else if(playerScore>computerScore){
-        console.log("Player wins");
-    }    
-    else{
-        console.log("Computer wins");
-    }
-} 
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
 
-game();
+rock.addEventListener("click", function(){
+    playerSelection = "rock";
+    console.log(playerSelection);
+    let computerSelection = getComputerChoice();
+    console.log(computerSelection)
+    playRound(playerSelection, computerSelection);
+
+});
+
+paper.addEventListener("click", function(){
+    playerSelection = "paper";
+    console.log(playerSelection);
+    let computerSelection = getComputerChoice();
+    console.log(computerSelection)
+    playRound(playerSelection, computerSelection);
+});
+
+scissors.addEventListener("click", function(){
+    playerSelection = "scissors";
+    console.log(playerSelection);
+    let computerSelection = getComputerChoice();
+    console.log(computerSelection)
+    playRound(playerSelection, computerSelection);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function game(){
+//     for (let i = 0; i<5; i++)
+//     {
+//         playerSelection = getPlayerChoice();
+//         console.log("Player: " + playerSelection);
+//         computerSelection = getComputerChoice();
+//         console.log("Computer: " + computerSelection)
+//         playRound(playerSelection, computerSelection);
+//     }
+//     console.log("Player score: " + playerScore);
+//     console.log("Computer score: " + computerScore);
+//     if(playerScore===computerScore){
+//         console.log("Tie");
+//     }
+//     else if(playerScore>computerScore){
+//         console.log("Player wins");
+//     }    
+//     else{
+//         console.log("Computer wins");
+//     }
+// } 
+
+// game();
