@@ -7,8 +7,7 @@ function getComputerChoice(){
 function playRound(player, computer){
     let playerScore = document.getElementById("playerScore");
     let computerScore = document.getElementById("computerScore");
-
-    
+    result.innerHTML = "";    
 // Dodac liczenie punktow za pomoca DOM    
     if(player === computer){
         let tie = document.createTextNode("Tie");
