@@ -1,0 +1,9 @@
+.score{
+    display: flex;
+    gap: 10px;
+}
+
+.result{
+    display: flex;
+    gap: 10px;
+}

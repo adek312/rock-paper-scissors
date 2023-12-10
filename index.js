@@ -5,42 +5,65 @@ function getComputerChoice(){
 }
 
 function playRound(player, computer){
+    let playerScore = document.getElementById("playerScore");
+    let computerScore = document.getElementById("computerScore");
+
+    
+// Dodac liczenie punktow za pomoca DOM    
     if(player === computer){
-        console.log("Tie")
-        playerScore++;
-        computerScore++;
+        let tie = document.createTextNode("Tie");
+        result.appendChild(tie);
+        pScore++;
+        cScore++;
+        playerScore.innerHTML = pScore;
+        computerScore.innerHTML = cScore;
     }
     else if(computer === "rock" && player === "scissors"){
-        console.log("Rock beats scissors. Computer Wins.");
-        computerScore++;
+        let comWinRockPaper = document.createTextNode("Rock beats scissors. Computer Wins.");
+        result.appendChild(comWinRockPaper);
+        cScore++;
+        computerScore.innerHTML = cScore;
     }
     else if(computer === "scissors" && player === "paper"){
-        console.log("Scissors beats paper. Computer Wins.");
-        computerScore++;
+        let comWinScissorsPaper = document.createTextNode("Scissors beats paper. Computer Wins.");
+        result.appendChild(comWinScissorsPaper);
+        cScore++;
+        computerScore.innerHTML = cScore;
     }
     else if(computer === "paper" && player === "rock"){
-        console.log("Paper beats rock. Computer Wins.");
-        computerScore++;
+        let comWinPaperRock = document.createTextNode("Paper beats rock. Computer Wins.");
+        result.appendChild(comWinPaperRock);
+        cScore++;
+        computerScore.innerHTML = cScore;
     }
     else if(player === "rock" && computer === "scissors"){
-        console.log("Rock beats scissors. Player Wins.");
-        playerScore++;
+        let plWinRockScissors = document.createTextNode("Rock beats scissors. Player Wins.");
+        result.appendChild(plWinRockScissors);
+        pScore++;
+        playerScore.innerHTML = pScore;
+
     }
     else if(player === "scissors" && computer === "paper"){
-        console.log("Scissors beats paper. Player Wins.");
-        playerScore++;
+        let plWinScissorsPaper = document.createTextNode("Scissors beats paper. Player Wins.");
+        result.appendChild(plWinScissorsPaper);
+        pScore++;
+        playerScore.innerHTML = pScore;
+
     }
     else if(player === "paper" && computer === "rock"){
-        console.log("Paper beats rock. Player Wins.");
-        playerScore++;
+        let plWinPaperRock = document.createTextNode("Paper beats rock. Player Wins.");
+        result.appendChild(plWinPaperRock);
+        pScore++;
+        playerScore.innerHTML = pScore;
+
     }
 }
 
+let result = document.getElementById("result");
+let pScore = 0;
+let cScore = 0;
 
-let playerScore = 0;
-let computerScore = 0;
 let playerSelection = "";
-
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
